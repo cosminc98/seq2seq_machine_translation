@@ -50,8 +50,16 @@ def play(model, iterator):
 
 if __name__=="__main__":
     arg_parser = ArgumentParser(description='.')
-    arg_parser.add_argument('--config', type=str, required=True, default="config.yml")
-    arg_parser.add_argument('--model', type=str, required=True)
+    arg_parser.add_argument(
+        '--config', 
+        type=str,
+        default="./configs/default.yml"
+    )
+    arg_parser.add_argument(
+        '--model', 
+        type=str, 
+        required=True
+    )
     args = arg_parser.parse_args()
 
     config = load_configurations(args.config)

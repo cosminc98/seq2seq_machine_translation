@@ -137,7 +137,11 @@ def evaluate(model, iterator, criterion):
 
 if __name__ == "__main__":
     arg_parser = ArgumentParser(description='.')
-    arg_parser.add_argument('--config', type=str, required=True, default="config.yml")
+    arg_parser.add_argument(
+        '--config', 
+        type=str,
+        default="./configs/default.yml"
+    )
     args = arg_parser.parse_args()
     
     config = load_configurations(args.config)
